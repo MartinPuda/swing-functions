@@ -9,6 +9,7 @@
 
 (defn -main [& args]
   (let [text-panel (doto (JTextArea.)
+                     (.setEditable false)
                      (.setBorder (BorderFactory/createEmptyBorder 10 10 10 10)))
 
         left-table (doto (JTable. (->> (ns-publics 'clojure.core)
